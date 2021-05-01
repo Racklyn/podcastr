@@ -9,6 +9,8 @@
     }
 }
 
+
+
 .latestEpisodes{
     ul{
         list-style: none;
@@ -175,3 +177,39 @@
         }
     }
 }
+
+
+.dark{
+    background: var(--dark-1);
+
+    color: var(--gray-100);
+
+    h2{
+        color: var(--gray-100);
+    }
+
+    .latestEpisodes ul li, .allEpisodes{
+
+        button{
+            background: var(--dark-1);
+            border: 2px solid var(--gray-800);
+        }
+
+        a{
+            color: var(--gray-100);
+        }
+    }
+
+    .latestEpisodes ul li{
+        background: var(--dark-2);
+        border: 1px solid var(--gray-800);
+
+    }
+
+    table{
+        th, td{
+            border-bottom: 1px solid var(--dark-2);
+        }
+    }
+}
+

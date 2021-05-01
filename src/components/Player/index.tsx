@@ -5,6 +5,7 @@ import styles from './styles.module.scss'
 import Slider from 'rc-slider'
 import 'rc-slider/assets/index.css'
 import { convertDurationToString } from '../../utils/convertDurationToString'
+import { useHeaderOptions } from '../../contexts/HeaderOptionsContext'
 
 export function Player(){
 
@@ -27,6 +28,8 @@ export function Player(){
         playPrevious,
         clearPlayerState
     } = usePlayer()
+
+    const {isDarkTheme} = useHeaderOptions()
 
     useEffect(()=>{
         if(!audioRef.current){
@@ -69,7 +72,7 @@ export function Player(){
 
 
     return(
-        <div className={styles.playerContainer}>
+        <div className={`${styles.playerContainer} ${isDarkTheme && styles.dark}`}>
             <header>
                 <img src="/playing.svg" alt="Tocando agora"/>
                 <strong>Tocando agora</strong>

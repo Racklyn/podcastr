@@ -2,6 +2,28 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    /* width */
+    ::-webkit-scrollbar {
+        width: 15px;
+    }
+
+    /* Track */
+    ::-webkit-scrollbar-track {
+    box-shadow: inset 1px 0px #73707675; 
+    border-radius: 0px;
+    }
+    
+    /* Handle */
+    ::-webkit-scrollbar-thumb {
+    background: #63606680; 
+    border-radius: 5px;
+    }
+
+    /* Handle on hover */
+    ::-webkit-scrollbar-thumb:hover {
+    background: #76727A80; 
+    }
 }
 
 // Definindo variáveis de escopo global
@@ -20,6 +42,11 @@
     --purple-400: #9164FA; 
     --purple-500: #8257E5;
     --purple-800: #6F48C9;
+
+
+    --dark-1: #2c2636;
+    --dark-2: #201e27;
+    --dark-purple: #67159C;
 }
 
 @media(max-width: 1080px){

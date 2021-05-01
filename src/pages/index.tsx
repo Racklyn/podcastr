@@ -3,12 +3,14 @@ import ptBR from 'date-fns/locale/pt-BR'
 import {GetStaticProps} from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import Head from 'next/head'
+  import Head from 'next/head'
 import { usePlayer } from '../contexts/PlayerContext'
 import { api } from '../services/api'
 import { convertDurationToString } from '../utils/convertDurationToString'
 
 import styles from './home.module.scss'
+import { useState } from 'react'
+import { useHeaderOptions } from '../contexts/HeaderOptionsContext'
 
 type Episode = {
   id: string;
@@ -29,11 +31,13 @@ type HomeProps ={
 export default function Home({latestEpisodes, allEpisodes}:HomeProps) {
 
   const {playList} = usePlayer() // ... = useContext(PlayerContext)
+  const {isDarkTheme} = useHeaderOptions()
 
   const episodeList = [...latestEpisodes, ...allEpisodes]
 
+
   return (
-    <div className={styles.homepage}>
+    <div className={`${styles.homepage} ${isDarkTheme && styles.dark}`}>
 
       {/* Definindo título para esta página */}
       <Head>
@@ -78,7 +82,7 @@ export default function Home({latestEpisodes, allEpisodes}:HomeProps) {
       <section className={styles.allEpisodes}>
           <h2>Todos episódios</h2>
 
-          <table cellSpacing={0}>
+          <table cellSpacing={0} >
             <thead>
               <tr>
                 <th></th>

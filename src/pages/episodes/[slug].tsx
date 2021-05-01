@@ -10,6 +10,7 @@ import { convertDurationToString } from '../../utils/convertDurationToString'
 
 import styles from './episodes.module.scss'
 import { usePlayer } from '../../contexts/PlayerContext'
+import { useHeaderOptions } from '../../contexts/HeaderOptionsContext'
 
 type Episode = {
     id: string;
@@ -30,43 +31,47 @@ export default function Episodes({episode}: EpisodeProps){
 
     const {play} = usePlayer()
 
+    const {isDarkTheme} = useHeaderOptions()
+
     return(
-        <div className={styles.episode}>
+        <div className={`${styles.episode} ${isDarkTheme && styles.dark}`}>
 
             {/* Definindo título para esta página */}
             <Head>
                 <title>{episode.title} | Podcastr</title>
             </Head>
 
-            <div className={styles.thumbnailContainer}>
-                <Link href="/">
+            <main>
+                <div className={styles.thumbnailContainer}>
+                    <Link href="/">
+                        <button type="button">
+                            <img src="/arrow-left.svg" alt="Voltar"/>
+                        </button>
+                    </Link>
+                    <Image
+                        width={700}
+                        height={160}
+                        src={episode.thumbnail}
+                        objectFit="cover"
+                    />
                     <button type="button">
-                        <img src="/arrow-left.svg" alt="Voltar"/>
+                        <img src="/play.svg" onClick={()=> play(episode)} alt="Tocar episódio"/>
                     </button>
-                </Link>
-                <Image
-                    width={700}
-                    height={160}
-                    src={episode.thumbnail}
-                    objectFit="cover"
+                </div>
+
+                <header>
+                    <h1>{episode.title}</h1>
+                    <span>{episode.members}</span>
+                    <span>{episode.publishedAt}</span>
+                    <span>{episode.durationAsString}</span>
+                </header>
+
+                {/* Não recomendado fazer isso caso a api não seja conhecida, pois pode ter um script no meio do html */}
+                <div
+                    className={styles.description}
+                    dangerouslySetInnerHTML={{ __html: episode.description}}
                 />
-                <button type="button">
-                    <img src="/play.svg" onClick={()=> play(episode)} alt="Tocar episódio"/>
-                </button>
-            </div>
-
-            <header>
-                <h1>{episode.title}</h1>
-                <span>{episode.members}</span>
-                <span>{episode.publishedAt}</span>
-                <span>{episode.durationAsString}</span>
-            </header>
-
-            {/* Não recomendado fazer isso caso a api não seja conhecida, pois pode ter um script no meio do html */}
-            <div
-                className={styles.description}
-                dangerouslySetInnerHTML={{ __html: episode.description}}
-            />
+            </main>
 
         </div>
     )

@@ -1,5 +1,5 @@
 .headerContainer{
-    background: var(--white);
+    background: var(--white); //#1E1E26;
     height: 6.5rem;
 
     display: flex;
@@ -18,5 +18,32 @@
     span{
         margin-left: auto;
         text-transform: capitalize;
+    }
+
+    .themeButton{
+        background-color: var(--purple-500);
+        color: var(--white);
+        border: none;
+        border-radius: 50%;
+        padding: 10px;
+        margin-left: 20px;
+        font-size: 0;
+        transition: filter 0.2s;
+
+        &:hover{
+            filter: opacity(0.85);
+        }
+    }
+}
+
+.dark{
+    background: var(--dark-2);
+
+    border-bottom: 1px solid var(--gray-800);
+
+    color: var(--gray-100);
+
+    .logo{
+        filter: brightness(1.5) saturate(1.3) invert(0.1);
     }
 }

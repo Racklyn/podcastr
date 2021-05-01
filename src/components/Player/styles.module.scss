@@ -57,7 +57,7 @@
     height: 20rem;
     border: 1.5px dashed var(--purple-300);
     border-radius: 1.5rem;
-    background: linear-gradient(143.8deg, rgba(145, 100, 250, 0.8) 0%, rgba(0,0,0,0) 100%);
+    background: linear-gradient(143.8deg, rgba(145, 100, 250, 0.8)/*#67159CC0*/  0%, rgba(0,0,0,0) 100%);
 
     padding: 4rem;
     text-align: center;
@@ -132,6 +132,20 @@
             &:hover:not(:disabled){
                 filter: brightness(0.7);
             }
+        }
+    }
+}
+
+.dark{
+    background: var(--purple-800);
+    
+    .emptyPlayer{
+        background: linear-gradient(143.8deg, #6F48C9C0  0%, rgba(0,0,0,0) 100%);
+    }
+
+    button{
+        &.playButton{
+            background: var(--purple-500);
         }
     }
 }
