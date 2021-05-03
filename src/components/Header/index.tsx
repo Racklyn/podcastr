@@ -6,15 +6,17 @@ import {BsMoon} from 'react-icons/bs'
 import {MdWbSunny} from 'react-icons/md'
 
 import styles from './styles.module.scss'
+import { LinearProgress } from '@material-ui/core'
 
 export function Header(){
 
-    const {isDarkTheme, changeTheme} = useHeaderOptions()
+    const {isDarkTheme, changeTheme, setSearchValue, searchValue} = useHeaderOptions()
     
     //String com data atual formatada
     const currentDate = format(new Date(), 'EEEEEE, d MMMM',{
         locale:ptBR
     })
+
 
     return(
         <header className={`${styles.headerContainer}  ${isDarkTheme && styles.dark}`}>
@@ -24,15 +26,23 @@ export function Header(){
 
             <span>{currentDate}</span>
 
-            {/* <div className={styles.searchContainer}>
-                <input type="search"/>
-            </div> */}
+            <div className={styles.searchContainer}>
+                <input
+                    type="text"
+                    value={searchValue}
+                    onChange={(e)=> setSearchValue(e.target.value)}
+                    placeholder="Pesquisar"
+                />
+                {searchValue!=""&&(
+                    <button type="button" onClick={()=>setSearchValue("")}>x</button>
+                )}
+            </div>
 
             <button className={styles.themeButton} onClick={changeTheme}>
                 {isDarkTheme?(
-                    <MdWbSunny color="#FFFD" size={20}/>
+                    <MdWbSunny color="#FFFD" size={22}/>
                 ):(
-                    <BsMoon color="#FFFD" size={20}/>
+                    <BsMoon color="#FFFD" size={22}/>
                 )
                 }
             </button>

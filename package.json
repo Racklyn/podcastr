@@ -9,6 +9,7 @@
     "server": "json-server server.json -w -d 750 -p 3333"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.4",
     "axios": "^0.21.1",
     "date-fns": "^2.21.1",
     "next": "10.1.3",

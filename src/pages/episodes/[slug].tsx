@@ -11,6 +11,8 @@ import { convertDurationToString } from '../../utils/convertDurationToString'
 import styles from './episodes.module.scss'
 import { usePlayer } from '../../contexts/PlayerContext'
 import { useHeaderOptions } from '../../contexts/HeaderOptionsContext'
+import { useState } from 'react'
+import { LinearProgress } from '@material-ui/core'
 
 type Episode = {
     id: string;
@@ -32,6 +34,7 @@ export default function Episodes({episode}: EpisodeProps){
     const {play} = usePlayer()
 
     const {isDarkTheme} = useHeaderOptions()
+    const [linkLoading, setLinkLoading] = useState(false)
 
     return(
         <div className={`${styles.episode} ${isDarkTheme && styles.dark}`}>
@@ -41,10 +44,12 @@ export default function Episodes({episode}: EpisodeProps){
                 <title>{episode.title} | Podcastr</title>
             </Head>
 
+            {linkLoading && <LinearProgress className={styles.linearProgress}/>}
+
             <main>
                 <div className={styles.thumbnailContainer}>
                     <Link href="/">
-                        <button type="button">
+                        <button type="button" onClick={()=>setLinkLoading(true)}>
                             <img src="/arrow-left.svg" alt="Voltar"/>
                         </button>
                     </Link>

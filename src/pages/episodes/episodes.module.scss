@@ -2,6 +2,13 @@
     height: calc(100vh - 6.5rem);
 
     overflow-y: scroll;
+
+    .linearProgress{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0px;
+        background-color: var(--gray-50);
+    }
 }
 
 .episode main{
@@ -95,6 +102,10 @@
 
 .dark{
     background: var(--dark-1);
+
+    .linearProgress{
+        background-color: var(--dark-1);
+    }
 
     main{
         color: var(--gray-200);

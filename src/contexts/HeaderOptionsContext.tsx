@@ -2,9 +2,9 @@ import {createContext, ReactNode, useContext, useState} from 'react'
 
 type HeaderOptionsContextData = {
     isDarkTheme: boolean;
+    searchValue: string;
     changeTheme: (boolean) => void;
-    // clearPlayerState: () => void;
-    // setPlayingState: (state: boolean) => void;
+    setSearchValue: (string) => void;
 }
 
 
@@ -18,6 +18,7 @@ type HeaderContextProviderProps = {
 export function HeaderOptionsContextProvider({children}: HeaderContextProviderProps){
       // Serão usadas para alterar os valores de PlayerContext
   const [isDarkTheme, setIsDarkTheme] = useState(false)
+  const [searchValue, setSearchValue] = useState("")
 
   function changeTheme(){
     setIsDarkTheme(!isDarkTheme)
@@ -28,7 +29,9 @@ export function HeaderOptionsContextProvider({children}: HeaderContextProviderPr
         value={
             {
                 isDarkTheme,
-                changeTheme
+                searchValue,
+                changeTheme,
+                setSearchValue
             }
         }
     >

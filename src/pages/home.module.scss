@@ -6,6 +6,18 @@
     h2{
         margin-top: 3rem;
         margin-bottom: 1.5rem;
+
+        strong{
+            color: var(--pink);
+        }
+    }
+
+    .linearProgress{
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0px;
+        background-color: var(--gray-50);
+        z-index: 10;
     }
 }
 
@@ -150,6 +162,12 @@
                 line-height: 1.4rem;
                 font-size: 1rem;
 
+                strong{
+                    color: var(--pink);
+                    background-color: var(--gray-100);
+                    font-size: 1.1rem;
+                }
+
                 &:hover{
                     text-decoration: underline;
                 }
@@ -176,6 +194,10 @@
             }
         }
     }
+
+    .circularProgress{
+        color: var(--purple-400);
+    }
 }
 
 
@@ -188,6 +210,10 @@
         color: var(--gray-100);
     }
 
+    .linearProgress{
+        background-color: var(--dark-1);
+    }
+
     .latestEpisodes ul li, .allEpisodes{
 
         button{
@@ -197,6 +223,10 @@
 
         a{
             color: var(--gray-100);
+            
+            strong{
+                background-color: #E6E8EBD0;
+            }
         }
     }
 
