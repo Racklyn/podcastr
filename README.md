@@ -1,9 +1,13 @@
 # podcastr 🎧
 
-O **podcastr** é uma aplicação de podcasts elaborada durante a Next Level week 5 (NLW 5), evento gratuito desenvolvido pela **[Rocketseat](https://rocketseat.com.br/)**. A aplicação permite ao usuário ouvir e ver detalhes e informações de alguns podcasts da própria Rocketseat. Como o foco desse projeto foi o desenvolvimento do frontend, os dados consumidos por ele são de uma Rest API 'fake' implementada ao projeto utilizando a biblioteca [json-server](https://www.npmjs.com/package/json-server), que simula uma Rest API a partir de um arquivo JSON, este contendo os dados dos podcasts em questão. Porém, alterando a base de dados e com algumas mudanças no projeto, essa aplicação pode facilmente ser utilizada por qualquer desenvolvedor de podcasts que queira um local onde seus ouvintes possam usufruir de seu conteúdo.
+<img src="https://user-images.githubusercontent.com/52416026/119211580-5be5ba00-ba89-11eb-9088-7e504830f2e2.png" width="80%">
 
-## Features incrementadas ao projeto original:
-Decidi adicionar algumas funcionalidades ao projeto original, que foi desenvolvido durante a NLW 5. As funcionalidades são:
+
+O **podcastr** é uma aplicação de podcasts elaborada durante a Next Level week 5 (NLW 5), evento gratuito desenvolvido pela **[Rocketseat](https://rocketseat.com.br/)**. A aplicação permite ao usuário ouvir e ver detalhes e informações de alguns podcasts da própria Rocketseat. <br><br>
+Como o foco desse projeto foi o desenvolvimento do frontend, os dados consumidos por ele são de uma Rest API 'fake' implementada ao projeto utilizando a biblioteca [json-server](https://www.npmjs.com/package/json-server), que simula uma Rest API a partir de um arquivo JSON, este contendo os dados dos podcasts em questão. Porém, alterando a base de dados e com algumas mudanças no projeto, essa aplicação pode facilmente ser utilizada por qualquer desenvolvedor de podcasts que queira um local onde seus ouvintes possam usufruir de seu conteúdo.
+
+## Features incrementadas ao projeto 🚀️
+Decidi levar a aplicação para o próximo nível adicionando algumas funcionalidades ao projeto original, desenvolvido durante a NLW 5. As funcionalidades são:
 - Modo noturno
 - Pesquisa por título do podcast
 - Responsividade
@@ -41,9 +45,9 @@ $ yarn server
 
 O projeto será executado em **[localhost:3000](http://localhost:3000/)**.
 
-O servidor do json-server será executado em [localhost:3333](http://localhost:3333/)
+O servidor do json-server será executado em *[localhost:3333](http://localhost:3333/)*
 
-## Construindo projeto: 🛠
+## Construindo projeto 🛠
 A aplicação pode ser colocada em produção com o comando:
 ```shell
 $ yarn build
