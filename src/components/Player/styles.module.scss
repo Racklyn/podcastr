@@ -1,7 +1,10 @@
 .playerContainer{
-    padding: 3rem 4rem;
+    padding: 0.5rem 4%;
     width: 26.5rem;
+    max-width: 30%;
     height: 100vh;
+    
+    z-index: 5;
 
     background: var(--purple-500);
     color: var(--white);
@@ -9,7 +12,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
 
     header{
         display: flex;
@@ -19,10 +22,11 @@
     strong{
         font-family: Lexend, sans-serif;
         font-weight: 600;
+
     }
     footer{
         align-self: stretch;
-
+        
         //Quando estiver com a estilização ".empty"
         &.empty .progress{
             opacity: 0.5;
@@ -32,24 +36,29 @@
 
 .currentEpisode{
     text-align: center;
-
+    
     img{
         border-radius: 1.5rem;
     }
 
-    strong{
-        display: block;
-        margin-top: 2rem;
-        font: 600 1.25rem Lexend, sans-serif;
-        line-height: 1.75rem;
+    .episodeInfo{
+        display: flex;
+        flex-direction: column;
+
+        strong{
+            margin-top: 1rem;
+            font: 600 1.25rem Lexend, sans-serif;
+            line-height: 1.75rem;
+        }
+
+        span{
+            margin-top: 0.5rem;
+            opacity: 0.6;
+            line-height: 1.5rem;
+        }
     }
 
-    span{
-        display: block;
-        margin-top: 1rem;
-        opacity: 0.6;
-        line-height: 1.5rem;
-    }
+    
 }
 
 .emptyPlayer{
@@ -95,9 +104,9 @@
 .buttons{
     display: flex;
     align-items: center;
-    justify-content: center;
-    margin-top: 2.5rem;
-    gap: 1.5rem;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+    padding:0  1.5rem;
 
     button{
         background: transparent;
@@ -124,7 +133,7 @@
         }
 
         &.playButton{
-            width: 4rem;
+            min-width: 4rem;
             height: 4rem;
             border-radius: 1rem;
             background: var(--purple-400);
@@ -146,6 +155,123 @@
     button{
         &.playButton{
             background: var(--purple-500);
+        }
+    }
+}
+
+
+@media(max-width: 1080px){
+    .playerContainer{
+        width: 22rem;
+        padding: 2rem 1rem;
+    }
+}
+
+
+@media(max-width: 1000px){
+    .playerContainer{
+        height: 12rem;
+        flex-direction: row;
+        width: 100%;
+        max-width: 100%;
+        justify-content: space-around;
+        padding: 1rem 1rem;
+        gap: 1rem;
+        
+        header{
+            flex-direction: column;
+            align-items: center;
+
+            strong{
+                text-align: center;
+            }
+        }
+
+        .currentEpisode{
+            display: flex;
+            gap: 1rem;
+
+            img{
+                max-height: 12rem;
+                
+            }
+            
+
+            .episodeInfo{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-around;
+                
+                strong{
+                    margin-top: 0;
+                    margin-top: 0;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 4;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                }
+                span{
+                    margin-top: 0;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    
+                }
+            }
+
+        }
+        .emptyPlayer{
+            height: 100%;
+            width: 10rem;
+        }
+
+        footer{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+            .buttons{
+                margin-top: 1.5rem;
+                gap: 1.2rem;
+            }
+        }
+    }
+    
+}
+
+
+@media(max-width: 760px){
+    .playerContainer{
+        height: 12rem;
+        header{
+            display: none;
+        }
+
+        .currentEpisode{
+            .episodeInfo{
+                strong{
+                    font-size: 1rem;
+                }
+            }
+            img{
+                max-height: 6rem;
+                width: 400px;
+                
+            }
+        }
+
+        footer{
+            zoom: 0.85;
+            -ms-zoom: 0.85;
+            -webkit-zoom: 0.85;
+            transform: scale(1);
+            transform-origin: initial;
+            -moz-transform:  scale(0.85,0.85);
+            -moz-transform-origin: left center;
         }
     }
 }

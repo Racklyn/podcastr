@@ -1,7 +1,8 @@
 .homepage{
-    padding: 0 4rem;
-    height: calc(100vh - 6.5rem);
+    padding: 0 4%;
+    height: calc(100vh - 5.75rem);
     overflow-y: scroll;
+    
 
     h2{
         margin-top: 3rem;
@@ -31,14 +32,16 @@
         gap: 1.5rem;
 
         li{
+            
             background: var(--white);
             border: 1px solid var(--gray-100);
-            padding: 1.25rem;
+            padding: 4%;
             border-radius: 1.5rem;
             position: relative;
 
             display: flex;
-            align-items: center;
+            align-items: stretch;
+            justify-content: space-between;
 
             
             img{
@@ -47,12 +50,18 @@
                 border-radius: 1rem;
             }
 
+            .imageDiv{
+                display: flex;
+                align-self: center;
+            }
+
             .episodeDetails{
                 flex: 1;
-                margin-left: 1rem;
+                width: 70%;
+                padding-left: 4%;
+                position: relative; 
 
                 a{
-                    display: block;
                     color: var(--gray-800);
                     font-family: Lexend, sans-serif;
                     font-weight: 600;
@@ -66,16 +75,22 @@
                 }
 
                 p{
+                    
                     font-size: 0.875rem;
+                    
                     margin-top: 0.5rem;
                     max-width: 70%;
-                    //white-space: nowrap; //Nunca quebrar de linha // ESSA LINHA TÁ DANDO ERRO
+                    
+                    // white-space: nowrap; //Nunca quebrar de linha.
+                    
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
                     overflow: hidden;
                     text-overflow: ellipsis;
                 }
 
                 span{
-                    display: inline-block;
                     margin-top: 0.5rem;
                     font-size: 0.875rem;
 
@@ -145,6 +160,10 @@
             text-align: left;
         }
 
+        .trImage{
+            width: 70px;
+        }
+
         td{
             font-size: 0.875rem;
 
@@ -152,6 +171,7 @@
                 width: 2.5rem;
                 height: 2.5rem;
                 border-radius: 0.5rem;
+                
             }
 
             a{
@@ -243,3 +263,48 @@
     }
 }
 
+
+
+@media(max-width: 1400px){
+    .homepage{
+        padding: 0 1rem;
+
+    }
+}
+
+@media(max-width: 1000px){
+    .homepage{
+        height: calc(100vh - (5.75rem + 12rem));
+    }
+    
+}
+
+
+@media(max-width: 700px){
+
+    .allEpisodes{
+        table{
+            th, td{
+                padding: 0.75rem 0.5rem;
+            }
+            .trImage{
+                width: 50px;
+            }
+        }
+    }  
+}
+
+@media(max-width: 640px){
+    .latestEpisodes{
+        ul{
+            grid-template-rows: repeat(2, 1fr);
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    }
+    .homepage{
+        h2{
+            margin-top: 1rem;
+        }
+    }
+}

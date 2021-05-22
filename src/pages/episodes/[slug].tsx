@@ -4,6 +4,7 @@ import ptBR from 'date-fns/locale/pt-BR'
 import Image from 'next/image'
 import Link from 'next/link'
 import Head from 'next/head'
+import {useRouter} from 'next/router'
 
 import { api } from '../../services/api'
 import { convertDurationToString } from '../../utils/convertDurationToString'
@@ -11,7 +12,7 @@ import { convertDurationToString } from '../../utils/convertDurationToString'
 import styles from './episodes.module.scss'
 import { usePlayer } from '../../contexts/PlayerContext'
 import { useHeaderOptions } from '../../contexts/HeaderOptionsContext'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { LinearProgress } from '@material-ui/core'
 
 type Episode = {
@@ -33,8 +34,23 @@ export default function Episodes({episode}: EpisodeProps){
 
     const {play} = usePlayer()
 
-    const {isDarkTheme} = useHeaderOptions()
+    const {isDarkTheme, searchValue, setSearchValue} = useHeaderOptions()
     const [linkLoading, setLinkLoading] = useState(false)
+    const [hasLoaded, setHasLoaded] = useState(false)
+
+    const router = useRouter()
+
+    useEffect(()=>{
+        setSearchValue("")
+        setHasLoaded(true)
+    },[])
+
+    useEffect(()=>{
+        if(hasLoaded && searchValue.length>0){
+            setLinkLoading(true)
+            router.push("/")
+        }
+    },[searchValue])
 
     return(
         <div className={`${styles.episode} ${isDarkTheme && styles.dark}`}>

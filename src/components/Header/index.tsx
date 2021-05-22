@@ -6,7 +6,6 @@ import {BsMoon} from 'react-icons/bs'
 import {MdWbSunny} from 'react-icons/md'
 
 import styles from './styles.module.scss'
-import { LinearProgress } from '@material-ui/core'
 
 export function Header(){
 
@@ -40,9 +39,9 @@ export function Header(){
 
             <button className={styles.themeButton} onClick={changeTheme}>
                 {isDarkTheme?(
-                    <MdWbSunny color="#FFFD" size={22}/>
+                    <MdWbSunny color="#FFFD" size={20}/>
                 ):(
-                    <BsMoon color="#FFFD" size={22}/>
+                    <BsMoon color="#FFFD" size={20}/>
                 )
                 }
             </button>

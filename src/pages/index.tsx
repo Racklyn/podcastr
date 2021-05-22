@@ -34,7 +34,7 @@ type HomeProps ={
 export default function Home({latestEpisodes, allEpisodes}:HomeProps) {
 
   const {playList} = usePlayer() // ... = useContext(PlayerContext)
-  const {isDarkTheme, searchValue} = useHeaderOptions()
+  const {isDarkTheme, searchValue, setSearchValue} = useHeaderOptions()
 
   const [isSearchMode, setSearchMode] = useState(false)
   const [isSearchLoading, setSearchLoading] = useState(false)
@@ -75,6 +75,7 @@ export default function Home({latestEpisodes, allEpisodes}:HomeProps) {
     setSearchLoading(false)
   },[searchValue])
 
+
   return (
     <div className={`${styles.homepage} ${isDarkTheme && styles.dark}`}>
 
@@ -94,13 +95,15 @@ export default function Home({latestEpisodes, allEpisodes}:HomeProps) {
               return(
                 <li key={episode.id}>
 
-                  <Image
-                    height={192}
-                    width={192}
-                    src={episode.thumbnail}
-                    alt={episode.title}
-                    objectFit="cover"
-                  />
+                  <div className={styles.imageDiv}>
+                    <Image
+                      height={192}
+                      width={192}
+                      src={episode.thumbnail}
+                      alt={episode.title}
+                      objectFit="cover"
+                    />
+                  </div>
 
                   <div className={styles.episodeDetails}>
                     <Link href={`/episodes/${episode.id}`}>
@@ -149,7 +152,7 @@ export default function Home({latestEpisodes, allEpisodes}:HomeProps) {
                 {listData.map((episode, index) =>{
                   return(
                     <tr key={episode.id}>
-                      <td style={{width: 72}}>
+                      <td className={styles.trImage}>
                         <Image
                           width={120}
                           height={120}

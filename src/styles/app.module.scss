@@ -1,7 +1,16 @@
 .wrapper{
     display: flex;
+    
+    max-height: 100vh;
 
     main{
         flex: 1;
+    }
+}
+
+@media(max-width: 1000px){
+    .wrapper{
+        display: grid;
+        grid-template-rows: 1fr 1fr;
     }
 }

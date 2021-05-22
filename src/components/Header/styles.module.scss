@@ -1,32 +1,36 @@
 .headerContainer{
-    background: var(--white); //#1E1E26;
-    height: 6.5rem;
+    background: var(--white);
+    height: 5.75rem;
 
     display: flex;
     align-items: center;
+    justify-content: space-around;
 
-    padding: 2rem 4rem;
+    padding: 2rem 3%;
 
     border-bottom: 1px solid var(--gray-100);
 
+    .logo{
+        max-width: 20%;
+    }
+
     p { 
-        margin-left: 2rem;
-        padding: 0.25rem 0 0.25rem 2rem;
+        margin-left: 3%;
+        padding: 0.25rem 0 0.25rem 3%;
         border-left: 1px solid var(--gray-100);
     }
     
     span{
-        margin-left: auto;
+        
         text-transform: capitalize;
-        padding-right: 2rem;
+        padding-left: 2%;
     }
 
 
     .searchContainer{
-
+        margin: 0 1%;
         display: flex;
         align-items: center;
-        gap: 0.25rem;
         position: relative;
 
         input{
@@ -38,7 +42,7 @@
             border: none;
             border-radius: 3rem;
             background: #98A6;
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--gray-500);
             outline: none;
 
@@ -68,9 +72,13 @@
         color: var(--white);
         border: none;
         border-radius: 50%;
-        height: 3rem;
-        width: 3rem;
-        margin-left: 2rem;
+
+        height: 2.75rem;
+        min-height: 2.75rem;
+        width: 2.75rem;
+        min-width: 2.75rem;
+
+        margin-left: 0rem;
         font-size: 0;
         transition: filter 0.2s;
 

@@ -6,7 +6,7 @@ O **podcastr** é uma aplicação de podcasts elaborada durante a Next Level wee
 Decidi adicionar algumas funcionalidades ao projeto original, que foi desenvolvido durante a NLW 5. As funcionalidades são:
 - Modo noturno
 - Pesquisa por título do podcast
-- Responsividade (em desenvolvimento)
+- Responsividade
 
 ## Tecnologias utilizadas 💻
 - React.js
@@ -43,7 +43,7 @@ O projeto será executado em **[localhost:3000](http://localhost:3000/)**.
 
 O servidor do json-server será executado em [localhost:3333](http://localhost:3333/)
 
-## Construindo projeto...: 🛠
+## Construindo projeto: 🛠
 A aplicação pode ser colocada em produção com o comando:
 ```shell
 $ yarn build

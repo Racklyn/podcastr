@@ -1,5 +1,5 @@
 .episode{
-    height: calc(100vh - 6.5rem);
+    height: calc(100vh - 5.75rem);
 
     overflow-y: scroll;
 
@@ -119,4 +119,18 @@
         }
     }
     
+}
+
+
+@media(max-width: 1000px){
+    .episode{
+        height: calc(100vh - (5.75rem + 12rem));
+    }
+    
+}
+
+@media(max-width: 640px){
+    .episode{
+        height: 70%;
+    }
 }
